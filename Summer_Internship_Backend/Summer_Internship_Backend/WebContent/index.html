@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>H2HBABBA2277 JACK Raghav Goel</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/ee707e9af6.js" crossorigin="anonymous"></script>
+</head>
+
+<body class="Landing_container">
+    
+    <div class="Header_grid">
+        <img class="item1" src="images/cust_logo.svg">
+        <img class="item2" src="images/logo.png" alt="Logo">
+    </div>
+
+    <div class="invoice_list">
+        <p>Invoice List</p>
+    </div>
+
+    <div class="form_container">
+
+        <div class="buttons_list">
+            <button id="ADD_button" onclick="document.getElementById('ADD_Modal').style.display='flex'">
+                <span><i class="fas fa-plus"></i>
+                </span>
+                <p>Add</p>
+            </button>
+           
+            <button id="EDIT_button" onclick="document.getElementById('EDIT_Modal').style.display='flex'">
+                <span><i class="fas fa-pen"></i>
+                </span>
+                <p>Edit</p>
+            </button>
+
+            <button id="DELETE_button" onclick="document.getElementById('Delete_Modal').style.display='flex'">
+                <span><i class="fas fa-minus"></i>
+                </span>
+                <p>Delete</p>
+            </button>
+
+           
+            <input type="text" placeholder='&#xf002; Search by Invoice number '/>
+        </div>
+      
+
+<div id="Delete_Modal" class="modal">
+    <div class="modal-content ">
+        <header class="modal-header">
+            <p> Delete record(s) ? </p>
+            <i id="close_btn" class="fas fa-times" style="color:#fff height=10px width=10px" onclick="document.getElementById('Delete_Modal').style.display='none'"></i>
+        </header>
+        
+        
+        <div class="modal-body">
+            <p>You'll lose your record(s) after this action. We can't recover them once you delete. Are you sure you want to
+            <span style="color:#FF5E5E">permanently delete </span>them?</p>
+        </div>
+           
+        
+        <div class="modal-footer">
+            <button onclick="document.getElementById('Delete_Modal').style.display='none'">Cancel</button>
+            <button onclick="">Delete</button>
+        </div>
+</div>
+</div>
+
+
+<div id="ADD_Modal" class="modal">
+    <div class="modal-content-add ">
+        <header class="modal-header">
+            <p>Add Invoice</p>
+            <i id="close_btn" class="fas fa-times" style="color:#fff height=10px width=10px"
+            onclick="document.getElementById('ADD_Modal').style.display='none'"></i>
+        </header>
+
+        
+        <div class="modal-body">
+            <div class="horizontal_forms">
+                <form>
+                    <div>
+                        <label for="Customer_name"> Customer Name <span style="color:#FF5E5E">*</span></label>
+                        <input id="Customer_name" type="text" class="add_input">
+                    </div>
+                    <br/>
+                    <div>
+                        <label for="Customer_No"> Customer No.<span style="color:#FF5E5E">*</span></label>
+                        <input id="Customer_No" type="text" class="add_input">
+                    </div>
+                    <br/>
+                   <div>
+                        <label for="Customer_Invoice"> Invoice Number <span style="color:#FF5E5E">*</span></label>
+                        <input id="Customer_Invoice" type="text" class="add_input">
+                   </div>
+                   <br/>
+                   <div>
+                        <label for="Invoice_amount"> Invoice Amount <span style="color:#FF5E5E">*</span></label>
+                        <input id="Invoice_amount" type="text" class="add_input">
+                   </div>
+                   <br/>
+                    
+                </form>
+
+                <form>
+                    <div>
+                        <label for="Due_Date"> Due Date <span style="color:#FF5E5E">*</span></label>
+                        <input id="Due_Date" type="date" class="add_input" style="color:#fff ">
+                    </div>
+                    <br />
+                    <div>
+                        <label for="Notes"> Notes<span style="color:#FF5E5E">*</span></label>
+                        <textarea id="Notes" maxlength="1000"></textarea>
+                    </div>
+                </form>
+            </div>  
+        </div>
+        <div class="modal-footer_add">
+            <div>
+                <a href="#" onclick="document.getElementById('ADD_Modal').style.display='none'">Cancel</a>
+            </div>
+            <div class="add_footer">
+                <button onclick="document.getElementById('ADD_Modal').style.display='none'">Clear</button>
+                <button onclick="">Add</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="EDIT_Modal" class="modal">
+    <div class="modal-content-edit ">
+        <header class="modal-header">
+            <p> Edit Invoice </p>
+            <i id="close_btn" class="fas fa-times" style="color:#fff height=10px width=10px" 
+            onclick="document.getElementById('EDIT_Modal').style.display='none'"></i>
+        </header>
+
+
+        <div class="modal-body">
+            <form>
+                <div>
+                    <label for="Invoice_amount"> Invoice Amount </label>
+                    <input id="Invoice_amount" type="text" class="add_input">
+                </div>
+            </form>
+            <br/>
+            <br/>
+            <label for="NOTES"> Notes </label>
+            <textarea id="NOTES"></textarea>
+        </div>
+
+
+        <div class="modal-footer_add">
+            <div>
+                <a href="#" onclick="document.getElementById('EDIT_Modal').style.display='none'">Cancel</a>
+            </div>
+            <div class="add_footer">
+                <button onclick="">Reset</button>
+                <button onclick="">Save</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+        <div class="table_container">
+            <table>
+                <th><input type="checkbox" id="header_checkbox"> Customer Name</th>
+                <th> Customer #</th>
+                <th> Invoice #</th>
+                <th> Invoicde Amount</th>
+                <th> Due Date </th>
+                <th> Predicted Payment Date</th>
+                <th> Notes </th>
+            </table>
+           
+        </div>
+
+    </div>
+
+</body>
+<script src="myscripts.js"></script>
+</html>
